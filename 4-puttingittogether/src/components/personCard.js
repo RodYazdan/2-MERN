@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
-const personCard = (props) => {
+const PersonCard = (props) => {
+    
+    const [ getAge,setAge]= useState(props.age);
+    const addAge=()=>setAge(getAge+1)  
     return (
-        <div>
-            <h1>asdasdioajsoidjas</h1>
-            <h1> {props.lastName}, {props.firstName}</h1>
-            <p>Age: {props.age}</p>
-            <p>Hair Color: {props.Brown}</p>
-            <button onclick="addAge()"> Birthday Button for {props.firstname}{props.lastname}</button>
+        <div >
+            <h1 > {props.lastName}, {props.firstName}</h1>
+            <p>Age: {getAge} </p>
+            <p>Hair Color: {props.hairColor}</p>
+            <button onClick={addAge}>Birthday Button for {props.firstName} {props.lastName}</button>
         </div>
     );
 }
-export default personCard;
+export default PersonCard;
