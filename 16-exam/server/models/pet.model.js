@@ -16,12 +16,15 @@ petDescription : {
     required:[true," A pet description is required"],
     minlength:[3,"A pet description must be at least 3 characters long"]
 },
-petSkills : {
-    type: "Number",
-    required:[true," Number of pet skills is required"],
-    max:[3,"Pets can have 0 to 3 skills max "]
+petSkillOne : {
+    type: "String",
+},
+petSkillTwo : {
+    type: "String",
+},
+petSkillThree : {
+    type: "String",
 }
-// createdAt and updatedAt is also added
 
 } , {timestamps:true})
 

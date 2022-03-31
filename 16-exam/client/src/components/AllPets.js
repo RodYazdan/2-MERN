@@ -21,49 +21,41 @@ const AllPets = (props) => {
         })
     }, [])
     
-    const deleteHandler = (idFromBelow)=>{
-        axios.delete(`http://localhost:8000/api/pets/${idFromBelow}`)
-        .then((res)=>{
-            console.log(res);
-            console.log(res.data);
-            setPetList(petList.filter(pet => pet._id !== idFromBelow));
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
-}
-
     return (
         <div>
             <header>
-                <h1>We have quotes by:</h1>
-                <Link to ={"/new"}> Add an Pet</Link>
-                <table style={{margin:"auto", border:"1px solid black"}}>
-                    <thead style={{backgroundColor:"lightgray",color:"white"}}>
+                <div class="toprow">
+                    <h1 style={{padding:"1px 20px"}} >Pet Shelter</h1>
+                    <Link style={{padding:"1px 30px"}} to={"/new"}>Add a pet to the shelter</Link>
+                </div>
+                <h2 style={{padding:"0px 20px"}} >These pets are looking for a good home</h2>
+            </header>
+
+            {/* <Link to ={"/new"}> Add a pet to the shelter</Link> */}
+            <header >
+
+                <table  style={{margin:"25px 50px 75px 20px", border:"1px solid black"}}>
+                    <thead style={{backgroundColor:"lightgrey",color:"black"}}>
                         <tr>
-                            <th>Pet</th>
-                            <th>Action Available:</th>
+                            <th >Name </th>
+                            <th >Type</th>
+                            <th style={{margin:"25px 50px 75px 100px"}}>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         {
                             petList?
                             petList.map((pet,index)=>(
                                 <tr key={index}>
-                                    <td>{pet.petName} </td>
                                     <td>
-                                        <button
-                                            style={{ backgroundImage:"linear-gradient(red, yellow)",padding:"7px 13px",color:"white",
-                                            fontWeight:"bold",margin:"5px", border:"none", borderRadius:"5px"}}
-                                            onClick={()=>{navigate(`/edit/${pet._id}`)}}>
-                                        Edit</button> 
-                                        
-                                        <button
-                                            style={{ backgroundImage:"linear-gradient(green, blue)",padding:"7px 13px",color:"white",
-                                            fontWeight:"bold", margin:"5px", border:"none", borderRadius:"5px"}}
-                                            onClick={()=>deleteHandler(pet._id)}>
-                                        Delete</button>
+                                        {pet.petName}
                                     </td>
+                                    <td>
+                                        {pet.petType}
+                                    </td>
+                                        <Link to={`/detail/${pet._id}`}>details {"|"}   </Link>
+                                        
+                                        <Link to={`/edit/${pet._id}`}>edit</Link>
                                 </tr> 
                             ))
                             :null

@@ -3,7 +3,7 @@ const Pet = require("../models/Pet.model")
 module.exports ={
 
     findAllPets: (req,res) =>{
-        Pet.find({}).collation({locale:'en',strength:2}).sort({authorName:1})
+        Pet.find({}).collation({locale:'en',strength:2}).sort({petType:1})
             .then((allPets)=>{
                 console.log(allPets);
                 res.json(allPets)

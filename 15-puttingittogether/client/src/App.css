@@ -36,35 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-header {
-  border-bottom: 3px double lightgray;
-  text-align: left;
-}
-.toprow{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-self: auto;
-}
-
-.midrow{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-self: auto;
-}
-
-.split{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-self: auto;
-  border-style: solid;
-  margin: 25px 20px 75px;
-  
-}
-
-.cell {
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
