@@ -74,7 +74,7 @@ const DetailStock = (props) => {
             console.error(error);
         });
 
-    },[id])
+    // },[id])
 
 
 
