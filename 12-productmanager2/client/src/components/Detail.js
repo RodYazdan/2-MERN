@@ -35,7 +35,7 @@ const deleteOneProduct = (id)=>{
         <div>
             <p>Title: {product.title}</p>
             <p>Price: {product.price}</p>
-            <p>Descriotion: {product.description}</p>
+            <p>Description: {product.description}</p>
             <br/>
             <button onClick={()=>deleteOneProduct(product._id)} >Delete</button>
         </div>
