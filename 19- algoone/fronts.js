@@ -24,7 +24,6 @@ class LinkedList {
 		this.head = newNode;
 
 		this.length++;
-		this.printList();
 		return this.head;
 	}
 
@@ -36,7 +35,6 @@ class LinkedList {
 		if(this.head) {
 			this.head = this.head.next;
 			this.length--;
-			this.printList();
 			return this.head;
 		}
 		else
